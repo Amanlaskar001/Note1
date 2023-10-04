@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.note1">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/note1"
+        android:roundIcon="@drawable/appicons"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight">
+
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.note1.MainActivity"
+            android:parentActivityName=".MainActivity"
+            tools:ignore="DuplicateActivity">
+        </activity>
+    </application>
+</manifest>
