@@ -28,16 +28,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Initiera ViewModel
         noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
 
-        // Ställ in dina Note-data
         noteViewModel.setNoteData(1, "Example Note", "")
     }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Load from DB
         LoadQuery("%")
     }
 
