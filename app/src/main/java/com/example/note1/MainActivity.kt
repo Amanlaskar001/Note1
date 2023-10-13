@@ -13,17 +13,27 @@ import android.widget.BaseAdapter
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.note1.AddNotes
-import com.example.note1.DbManager
-import com.example.note1.Note
-
-import com.example.note1.R
+import androidx.lifecycle.ViewModelProvider
+import com.example.note1.*
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var noteViewModel: NoteViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
 
     var listNotes=ArrayList<Note>()
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Initiera ViewModel
+        noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
+
+        // Ställ in dina Note-data
+        noteViewModel.setNoteData(1, "Example Note", "")
+    }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

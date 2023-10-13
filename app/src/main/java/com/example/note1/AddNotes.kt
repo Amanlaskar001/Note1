@@ -1,20 +1,17 @@
-package com.example.note1
+package com.note1
+
 
 import android.content.ContentValues
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import android.widget.EditText
-
+import androidx.appcompat.app.AppCompatActivity
+import com.example.note1.R
 
 class AddNotes : AppCompatActivity() {
 
     val dbTable="Notes"
     var id=0
-    val etTitle = findViewById<EditText>(R.id.etTitle)
-    val etDes = findViewById<EditText>(R.id.etDes)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +32,7 @@ class AddNotes : AppCompatActivity() {
         }catch (ex:Exception){}
     }
 
-    fun  buAdd(view: View){
+    fun  buAdd(view:View){
         var dbManager= DbManager(this)
 
         var values= ContentValues()
